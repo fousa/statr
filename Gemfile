@@ -9,4 +9,5 @@ gem "devise"
 group :test, :development do
   gem "rspec-rails"
   gem "autotest"
+  gem "shoulda-matchers"
 end
