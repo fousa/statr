@@ -1,5 +1,6 @@
-source 'http://rubygems.org'
+source "http://rubygems.org"
 
-gem 'rails', '3.0.3'
+gem "rails", "3.0.3"
 
-gem 'pg'
+gem "pg"
+gem "jquery-rails"
