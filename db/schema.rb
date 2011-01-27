@@ -10,12 +10,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110127220422) do
+ActiveRecord::Schema.define(:version => 20110127221757) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.boolean  "income"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "transactions", :force => true do |t|
+    t.string   "description"
+    t.integer  "category_id"
+    t.date     "executed_at"
+    t.decimal  "amount",      :precision => 10, :scale => 2
     t.datetime "created_at"
     t.datetime "updated_at"
   end
