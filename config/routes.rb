@@ -4,4 +4,6 @@ Statr::Application.routes.draw do
   root :to => "dashboard#index"
 
   resource :dashboard
+
+  resources :categories, :except => :show
 end
