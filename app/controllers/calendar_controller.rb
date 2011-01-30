@@ -3,6 +3,7 @@ class CalendarController < ApplicationController
 
   def show
     @transactions = current_user.transactions
-    @date = params[:month] ? Date.parse(params[:month]) : Date.today 
+
+    @date = current_date(params[:year], params[:month])
   end
 end

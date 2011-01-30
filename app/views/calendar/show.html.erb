@@ -2,9 +2,9 @@
 
 <div id="calendar">  
   <h2 id="month">  
-    <%= link_to "<", :month => (@date.beginning_of_month-1).strftime("%Y-%m-01") %>  
+    <%= link_to raw("&larr;"), previous_calendar_path(@date) %>
     <%= h @date.strftime("%B %Y") %>  
-    <%= link_to ">", :month => (@date.end_of_month+1).strftime("%Y-%m-01") %>  
+    <%= link_to raw("&rarr;"), next_calendar_path(@date) %>
   </h2>   
   <% calendar_for @transactions, :year => @date.year, :month => @date.month do |calendar| %>  
     <%= calendar.head('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday')%>
