@@ -5,5 +5,6 @@ Statr::Application.routes.draw do
 
   resource :dashboard
 
-  resources :categories, :except => :show
+  resources :categories,   :except => :show
+  resources :transactions, :except => :show
 end

@@ -1,0 +1,7 @@
+<h2>List transactions</h2>
+
+<ul>
+  <% @transactions.each do |transaction| -%>
+    <li><%= transaction.executed_at %> (<%= link_to "edit", edit_transaction_path(transaction) %> - <%= link_to "remove", transaction, :method => :delete, :confirm => "Are you sure?" %>)</li>
+  <% end -%>
+</ul>
