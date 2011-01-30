@@ -7,6 +7,7 @@ gem "jquery-rails"
 gem "devise"
 gem "default_value_for"
 gem "delocalize"
+gem "friendly_id"
 
 group :test, :development do
   gem "rspec-rails"
