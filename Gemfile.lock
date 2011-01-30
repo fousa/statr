@@ -32,6 +32,7 @@ GEM
     arel (2.0.7)
     autotest (4.4.6)
       ZenTest (>= 4.4.1)
+    babosa (0.2.2)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
     default_value_for (1.0.1)
@@ -42,6 +43,8 @@ GEM
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    friendly_id (3.2.0)
+      babosa (~> 0.2.1)
     i18n (0.5.0)
     jquery-rails (0.2.6)
       rails (~> 3.0)
@@ -102,6 +105,7 @@ DEPENDENCIES
   default_value_for
   delocalize
   devise
+  friendly_id
   jquery-rails
   pg
   rails (= 3.0.3)

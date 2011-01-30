@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
          :confirmable,
          :lockable
 
-  has_many :categories, :dependent => :destroy
+  has_many :categories,   :dependent => :destroy
   has_many :transactions, :through => :categories
 
   attr_accessible :email, :password, :password_confirmation, :remember_me
