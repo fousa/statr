@@ -23,10 +23,10 @@ class TransactionsController < ApplicationController
   end
 
   def update
-    @transaction = current_user.transactions.find params[:id]
+    @transaction = current_user.transactions.find params[:id], :readonly => false
     @transaction.update_attributes params[:transaction]
 
-    respond_with @transaction
+    respond_with @transaction, :location => edit_transaction_path(@transaction)
   end
 
   def destroy

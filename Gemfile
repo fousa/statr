@@ -5,6 +5,8 @@ gem "rails", "3.0.3"
 gem "pg"
 gem "jquery-rails"
 gem "devise"
+gem "default_value_for"
+gem "delocalize"
 
 group :test, :development do
   gem "rspec-rails"

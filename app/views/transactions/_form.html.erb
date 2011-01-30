@@ -11,7 +11,7 @@
   <%= f.text_field :executed_at %></p>
 
   <p><%= f.label :amount %><br />
-  <%= f.text_field :amount %></p>
+<%= f.text_field :amount, :precision => 2, :delimiter => "" %></p>
 
   <p><%= f.label :category_id %><br />
   <%= f.select :category_id, Category.options_for_select, { :include_blank => true } %></p>
