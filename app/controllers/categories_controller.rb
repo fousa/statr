@@ -15,7 +15,8 @@ class CategoriesController < ApplicationController
     @category = current_user.categories.build params[:category]
     @category.save
 
-    respond_with @category
+    flash[:notice] = "Category created" unless @category.invalid?
+    respond_with @category, :location => categories_path
   end
 
   def edit
@@ -25,8 +26,9 @@ class CategoriesController < ApplicationController
   def update
     @category = current_user.categories.find params[:id]
     @category.update_attributes params[:category]
-
-    respond_with @category
+    
+    flash[:notice] = "Category updated" unless @category.invalid?
+    respond_with @category, :location => categories_path
   end
 
   def destroy

@@ -15,6 +15,7 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.new params[:transaction]
     @transaction.save
 
+    flash[:notice] = "Transaction created" unless @transaction.invalid?
     respond_with @transaction, :location => transactions_path
   end
 
@@ -26,7 +27,8 @@ class TransactionsController < ApplicationController
     @transaction = current_user.transactions.find params[:id], :readonly => false
     @transaction.update_attributes params[:transaction]
 
-    respond_with @transaction, :location => edit_transaction_path(@transaction)
+    flash[:notice] = "Transaction updated" unless @transaction.invalid?
+    respond_with @transaction, :location => transactions_path
   end
 
   def destroy
