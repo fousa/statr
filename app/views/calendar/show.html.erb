@@ -12,7 +12,7 @@
       <%= date.day %>  
       <ul>  
         <% transactions.each do |transaction| %>  
-          <li><%= link_to transaction.category.name, transaction %></li>  
+          <li class="<%= transaction.category.income? ? "income" : "expense" %>"><%= link_to "#{transaction.category.name} (#{number_to_currency transaction.amount})", edit_transaction_path(transaction) %></li>  
         <% end %>  
       </ul>
     <% end %>  
