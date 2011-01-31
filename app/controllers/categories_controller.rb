@@ -35,6 +35,7 @@ class CategoriesController < ApplicationController
     @category = current_user.categories.find params[:id]
     @category.destroy
 
-    respond_with @category
+    flash[:notice] = @category.errors.empty? ? "Category destroyed" : @category.errors.full_messages.first 
+    respond_with @category, :location => categories_path
   end
 end

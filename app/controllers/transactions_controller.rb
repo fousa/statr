@@ -35,6 +35,7 @@ class TransactionsController < ApplicationController
     @transaction = current_user.transactions.find params[:id]
     @transaction.destroy
 
+    flash[:notice] = "Transaction destroyed"
     respond_with @transaction
   end
 end
