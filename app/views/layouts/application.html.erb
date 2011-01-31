@@ -7,6 +7,13 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+  <ul>
+    <li><%= link_to_unless_current "dashboard", dashboard_path %></li>
+    <li><%= link_to_unless_current "calendar", calendar_path %></li>
+    <li><%= link_to_unless_current "categories", categories_path %></li>
+    <li><%= link_to_unless_current "transactions", transactions_path %></li>
+  </ul>
+
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
