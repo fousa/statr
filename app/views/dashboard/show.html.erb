@@ -1,5 +1,12 @@
 <h1>Dashboard</h1>
 
+<h2>Statistics for this month</h2>
+<ul>
+  <li><strong>Income: </strong><%= number_to_currency @income_this_month %></li>
+  <li><strong>Expenses: </strong><%= number_to_currency @expenses_this_month %></li>
+</ul>
+
+<h2>Recent transaction</h2>
 <ul>
   <% @transactions.each do |transaction| %>
     <li><%= link_to transaction.executed_at, edit_transaction_path(transaction) %></li>
