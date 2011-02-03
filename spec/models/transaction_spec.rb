@@ -14,5 +14,6 @@ describe Transaction do
     pending "should return the transactions for a month"
     pending "should calculate average"
     pending "should calculate leftover"
+    pending "should calculate leftover for transactions"
   end
 end

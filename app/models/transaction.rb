@@ -18,6 +18,16 @@ class Transaction < ActiveRecord::Base
     incomings - expenses
   end
 
+  def self.leftover_for(transactions)
+    transactions.inject(0) do |sum, transaction|
+      if transaction.category.income?
+        sum += transaction.amount 
+      else
+        sum -= transaction.amount 
+      end
+    end
+  end
+
   def self.average_from(incomings, expenses)
     self.leftover_from(incomings, expenses) / 28
   end

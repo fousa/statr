@@ -67,3 +67,8 @@
 .expense a {
   color: red;
 }
+
+#calendar span {
+  float: right;
+  font-size: 11px;
+}

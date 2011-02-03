@@ -9,6 +9,9 @@
   <% calendar_for @transactions, :year => @date.year, :month => @date.month do |calendar| %>  
     <%= calendar.head('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday')%>
     <% calendar.day(:day_method => :executed_at) do |date, transactions| %>  
+      <% if transactions.count > 0 %>
+        <span><%= number_to_currency Transaction.leftover_for(transactions) %></span>
+      <% end %>
       <%= date.day %>  
       <ul>  
         <% transactions.each do |transaction| %>  
