@@ -11,6 +11,6 @@
 <h2>Recent transaction</h2>
 <ul>
   <% @transactions.each do |transaction| %>
-    <li><%= link_to transaction.executed_at, edit_transaction_path(transaction) %></li>
+    <li><%= render transaction %></li>
   <% end %>
 </ul>

@@ -1,0 +1,6 @@
+<span><%= transaction.executed_at %></span>
+<span><%= number_to_currency transaction.amount %></span>
+<span><%= transaction.category.name %></span>
+<span><%= transaction.description %></span>
+<%= link_to "edit", edit_transaction_path(transaction) %>
+<%= link_to "remove", transaction, :method => :delete, :confirm => "Are you sure?" %>
