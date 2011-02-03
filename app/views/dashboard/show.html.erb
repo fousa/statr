@@ -4,6 +4,8 @@
 <ul>
   <li><strong>Income: </strong><%= number_to_currency @income_this_month %></li>
   <li><strong>Expenses: </strong><%= number_to_currency @expenses_this_month %></li>
+  <li><strong>Left: </strong><%= number_to_currency @leftover %></li>
+  <li><strong>Spend/Day: </strong><%= number_to_currency @average %></li>
 </ul>
 
 <h2>Recent transaction</h2>
