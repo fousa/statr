@@ -19,5 +19,5 @@
   <p><%= f.label :description %><br />
   <%= f.text_area :description %></p>
 
-  <p><%= f.submit %></p>
+  <p><%= f.submit %><% if transaction.new_record? %><%= f.submit "Create transaction and continue", :name => "continue" %><% end %></p>
 <% end -%>

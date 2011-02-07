@@ -16,7 +16,7 @@ class TransactionsController < ApplicationController
     @transaction.save
 
     flash[:notice] = "Transaction created" unless @transaction.invalid?
-    respond_with @transaction, :location => transactions_path
+    respond_with @transaction, :location => params[:continue].nil? ? new_transaction_path : transactions_path
   end
 
   def edit
